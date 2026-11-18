@@ -2,6 +2,7 @@ import streamlit as st
 from groq import Groq
 st.set_page_config(page_title = 'Placement Practice' , layout='centered')
 st.title("AI Interview Assistant")
+st.title("Launched by BV Srilekha")
 st.caption("Practice and Prepare for your Placement")
 try:
   client = Groq(api_key = st.secrets["GROQ_API_KEY"])
