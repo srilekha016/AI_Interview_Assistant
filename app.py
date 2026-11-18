@@ -16,6 +16,6 @@ model = st.selectbox('Difficulty',['Beginner','Intermediate','Advanced'])
 model = st.radio('Activity',['Generate Questions','Generate Code Questions','Evaluate Answer','Improve Answer'])
 if mode == 'Generate Questions':
     count = st.slider("Number of Questions",1,10,5)
-  elif mode == 'Generate Code Question' :
+  elif mode == 'Generate Code Question':
     topic = st.selectbox('Topics', ['SQL','AIML','Python','DSA','C++/C','JAVA','ADA'])
     count = st.slider("Number of Questions",1,10,5)
