@@ -18,4 +18,4 @@ if mode == 'Generate Questions':
   count = st.slider("Number of Questions",1,10,5)
 elif mode == 'Generate Code Questions':
   topic = st.selectbox('Topics', ['SQL','AIML','Python','DSA','C++/C','Java','ADA'])
-   count = st.slider("Number of Questions",1,10,5)
+  count = st.slider("Number of Questions",1,10,5)
