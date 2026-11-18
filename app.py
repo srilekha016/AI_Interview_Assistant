@@ -13,11 +13,12 @@ role = st.selectbox('Job Title', ['Machine Learning Engineer', 'Senior Software'
 if role == "Others":
   st.text_input("Enter your Job Title", "XXXXXX")
 model = st.selectbox('Model', ['qwen/qwen3.8-27b','openai/gpt-oss-120b'])
-model = st.selectbox('Difficulty',['Beginner','Intermediate','Advanced'])
+Level = st.selectbox('Difficulty',['Beginner','Intermediate','Advanced'])
 mode = st.radio('Activity',['Generate Questions','Generate Code Questions','Evaluate Answer','Improve Answer'])
 if mode == 'Generate Questions':
     count = st.slider("Number of Questions", 1, 10, 5)
 elif mode == 'Generate Code Questions':
-  topic = st.selectbox("Topics", ['SQL', 'AIML', 'Python', 'DSA', 'C++/C', 'JAVA', 'ADA'])
+  topic = st.selectbox('Topics', ['SQL', 'AIML', 'Python', 'DSA', 'C++/C', 'JAVA', 'ADA'])
   count = st.slider("Number of Questions", 1, 10, 5)
+  
 
