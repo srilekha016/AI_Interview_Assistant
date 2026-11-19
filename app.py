@@ -12,19 +12,19 @@ except (KeyError, FileNotFound):
 role = st.selectbox('Job Title', ['Machine Learning Engineer', 'Senior Software', 'Data Analyst', 'Prompt Engineer', 'DevOps Engineer', 'Others'])
 if role == "Others":
   st.text_input("Enter your Job Title", "XXXXXX")
-model = st.selectbox('gen_model', ['qwen/qwen3.8-27b','openai/gpt-oss-120b'])
-Level = st.selectbox('Difficulty',['Beginner','Intermediate','Advanced'])
-mode = st.radio('Activity',['Generate Questions','Generate Code Questions','Evaluate Answer','Improve Answer'])
-if mode == 'Generate Questions':
+  model = st.selectbox('gen_model', ['qwen/qwen3.8-27b','openai/gpt-oss-120b'])
+  Level = st.selectbox('Difficulty',['Beginner','Intermediate','Advanced'])
+  mode = st.radio('Activity',['Generate Questions','Generate Code Questions','Evaluate Answer','Improve Answer'])
+  if mode == 'Generate Questions':
     count = st.slider("Number of Questions", 1, 10, 5)
-elif mode == 'Generate Code Questions':
-  topic = st.selectbox('Topics', ['SQL', 'AIML', 'Python', 'DSA', 'C++/C', 'JAVA', 'ADA'])
-  count = st.slider("Number of Questions", 1, 10, 5)
-else:
-  question = st.text_area('Enter Interview Question here')
-  answer = st.text_area('Enter your answer', height=160)
-if st.button ("Generate AI Response", type = "primary"):
-  if mode in ['Evaluate Answers', 'Improve Answers'] and (not question.strip() or (not answer.strip())):
+  elif mode == 'Generate Code Questions':
+    topic = st.selectbox('Topics', ['SQL', 'AIML', 'Python', 'DSA', 'C++/C', 'JAVA', 'ADA'])
+    count = st.slider("Number of Questions", 1, 10, 5)
+  else:
+    question = st.text_area('Enter Interview Question here')
+    answer = st.text_area('Enter your answer', height=160)
+  if st.button ("Generate AI Response", type = "primary"):
+     if mode in ['Evaluate Answers', 'Improve Answers'] and (not question.strip() or (not answer.strip())):
      st.warning("Please enter a valid Question and Answer")
      st.stop()
   topics = "Topics is" +  topic  + "Difficulty is" +  Level
@@ -37,9 +37,9 @@ if st.button ("Generate AI Response", type = "primary"):
     elif mode == "Improve Answer":
       task = "Question: " + question + "My Answer: " + answer + "Improve the answer based on coding, communication, apptitude, preparation on interview."
       background = "Job role : " + role + " Difficulty level " + level
-      with st.spinner("Generating your answer ..."):
-        try:
-          response = client.chat.completions.create(
+    with st.spinner("Generating your answer ..."):
+      try:
+         response = client.chat.completions.create(
             model = gen_model,
             messages = [{"role":"system",
                          "content":"Act as a Student"},
