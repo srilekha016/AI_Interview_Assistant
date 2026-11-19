@@ -54,7 +54,7 @@ if role == "Others":
      except Exception as e:
           st.error ("API connection was unsuccessful: ", e)
           st.info ("Please check your API Key and rate limits")
-         st.caption("Powered by Streamlit.io and GitHub. Using LLM API")
+            st.caption("Powered by Streamlit.io and GitHub. Using LLM API")
    
     
 
