@@ -28,16 +28,16 @@ if role == "Others":
         st.warning("Please enter a valid Question and Answer")
         st.stop()
      topics = "Topics is" +  topic  + "Difficulty is" +  level
-    if mode == "Generate Questions":
+  if mode == "Generate Questions":
       task = "Generate" + str(count) + "Frequently asked Interview Questions, 3 theory and 2 scenario questions. Do not give answers. Give Hints."
-    elif mode == " Generate Code Questions":
+  elif mode == " Generate Code Questions":
       task = "Generate" + str(count) + "Frequently asked coding questions on topic" + topic + "and give hints to solve them. Be accurate." 
-    elif mode == "Evaluate Answer":
+  elif mode == "Evaluate Answer":
       task = "Question: " + question + "My Answer: " + answer + "Evaluate this answer based on concept, relevance, communication, length of answer. give each rating out of 5."
-    elif mode == "Improve Answer":
+  elif mode == "Improve Answer":
       task = "Question: " + question + "My Answer: " + answer + "Improve the answer based on coding, communication, apptitude, preparation on interview."
-      background = "Job role : " + role + " Difficulty level " + Level
-    with st.spinner("Generating your answer ..."):
+  background = "Job role : " + role + " Difficulty level " + Level
+  with st.spinner("Generating your answer ..."):
       try:
          response = client.chat.completions.create(
             model = gen_model,
