@@ -42,7 +42,7 @@ if role == "Others":
          response = client.chat.completions.create(
             model = gen_model,
             messages = [{"role":"system","content":"Act as a Senior Interviewer,both HR and Technical expert"},
-                        {"role: "user",
+                        {"role": "user",
                         "content" : background + task}],
             temperature = 0.7,
             max_tokens = 1800
