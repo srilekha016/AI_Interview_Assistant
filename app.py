@@ -12,7 +12,7 @@ except (KeyError, FileNotFound):
 role = st.selectbox('Job Title', ['Machine Learning Engineer', 'Senior Software', 'Data Analyst', 'Prompt Engineer', 'DevOps Engineer', 'Others'])
 if role == "Others":
   st.text_input("Enter your Job Title", "XXXXXX")
-  model = st.selectbox('gen_model', ['qwen/qwen3.8-27b','openai/gpt-oss-120b'])
+  gen_model = st.selectbox('gen_model', ['qwen/qwen3.8-27b','openai/gpt-oss-120b'])
   level = st.selectbox('Difficulty',['Beginner','Intermediate','Advanced'])
   mode = st.radio('Activity',['Generate Questions','Generate Code Questions','Evaluate Answer','Improve Answer'])
   if mode == 'Generate Questions':
