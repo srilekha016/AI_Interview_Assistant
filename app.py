@@ -47,14 +47,14 @@ if role == "Others":
             temperature = 0.7,
             max_tokens = 1800
           )
-          output = response.choices[0].message.content
-          st.subheader("AI Response ")
-          st.markdown(output)
-          st.download_button("Download Response", output, file_name = "Interview_Response.txt", mime = 'text/plain')
-        except Exception as e:
+         output = response.choices[0].message.content
+         st.subheader("AI Response ")
+         st.markdown(output)
+         st.download_button("Download Response", output, file_name = "Interview_Response.txt", mime = 'text/plain')
+       except Exception as e:
           st.error ("API connection was unsuccessful: ", e)
           st.info ("Please check your API Key and rate limits")
-          st.caption("Powered by Streamlit.io and GitHub. Using LLM API")
+         st.caption("Powered by Streamlit.io and GitHub. Using LLM API")
    
     
 
