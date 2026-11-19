@@ -38,7 +38,7 @@ if role == "Others":
       task = "Question: " + question + "My Answer: " + answer + "Improve the answer based on coding, communication, apptitude, preparation on interview."
   background = "Job role : " + role + " Difficulty level " + Level
   with st.spinner("Generating your answer ..."):
-      try:
+       try:
          response = client.chat.completions.create(
             model = gen_model,
             messages = [{"role":"system","content":"Act as a Senior Interviewer,both HR and Technical expert"},
@@ -51,7 +51,7 @@ if role == "Others":
          st.subheader("AI Response ")
          st.markdown(output)
          st.download_button("Download Response", output, file_name = "Interview_Response.txt", mime = 'text/plain')
-       except Exception as e:
+        except Exception as e:
           st.error ("API connection was unsuccessful: ", e)
           st.info ("Please check your API Key and rate limits")
          st.caption("Powered by Streamlit.io and GitHub. Using LLM API")
